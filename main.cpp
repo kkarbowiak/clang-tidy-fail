@@ -1,5 +1,6 @@
-#include <vector>
+#include <ranges>
 #include <iostream>
+#include <vector>
 
 int main()
 {
@@ -8,8 +9,8 @@ int main()
     v.push_back(2);
     v.push_back(3);
 
-    for (auto r = v.rbegin(); r != v.rend(); ++r)
+    for (unsigned int & r : std::ranges::reverse_view(v))
     {
-        std::cout << *r;
+        std::cout << r;
     }
 }
